@@ -1,9 +1,9 @@
-package org.PasswordWitcher;
+package org.todoListBasic;
 
 public enum Priority {
-    MAIN_TASKS("Main tasks"),
-    SECONDARY_TASKS("Secondary tesk"),
-    OPTIONAL_TASKS("Optional task");
+    MAIN_TASKS("Alta"),
+    SECONDARY_TASKS("Baixa"),
+    OPTIONAL_TASKS("Opcional");
 
     private final String description;
 
@@ -11,7 +11,9 @@ public enum Priority {
         this.description = description;
     }
 
-    public String getDescription(){
+
+    @Override
+    public String toString(){
         return description;
     }
 

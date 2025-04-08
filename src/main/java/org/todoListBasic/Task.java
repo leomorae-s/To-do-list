@@ -1,17 +1,21 @@
-package org.PasswordWitcher;
+package org.todoListBasic;
+
+import java.util.List;
 
 public class Task {
 
+    private final int id;
     private String name;
     private String description;
-    Priority priority;
+    private Priority priority;
     private boolean completed = false;
 
-    public Task(String name, String description, Priority priority, boolean completed){
+
+    public Task(String name, String description, Priority priority, int id){
         this.name = name;
         this.description = description;
         this.priority = priority;
-        this.completed = completed;
+        this.id =id;
     }
 
 
@@ -30,15 +34,24 @@ public class Task {
         System.out.println("Prioridade alterada com sucesso!");
     }
 
-    public void complete(){
+    public void complete(Task task){
 
-        this.completed = true;
-        System.out.println("Atividade completada!");
+        task.completed = true;
+
     }
 
-    public String showTask(){
+    public int getId(){
+        return this.id;
+    }
 
-        return this.name;
+
+
+
+    @Override
+    public String toString(){
+
+        return String.format("\n\nTarefa: %s\nDescrição: %s\nPrioridade: %s\nId: %d", this.name, this.description, this.priority, this.id);
+
     }
 
 }
